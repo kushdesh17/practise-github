@@ -43,3 +43,5 @@ def menu(data_table):
 if __name__ == "__main__":
     data = read_csv('weather.csv')
     menu(data)
+    
+    HI
