@@ -2,20 +2,28 @@
 series_titles = ["Maximum temperature (Degree C)", "Minimum temperature (Degree C)", "Rainfall amount (millimetres)"]
 
 def mean(in_series):
-    # Calculate the sum of all numbers in the list
-  total = sum(in_series)
-  # Get the count of numbers in the list
-  count = len(in_series)
-  
-  # Calculate the average
-  if count > 0:
-      result = total / count
-      return result
-  else:
-      return 0
     pass
 
 def variance(in_series):
+    # 1. Get the average first
+    avg = mean(in_series)
+    count = len(in_series)
+    
+    if count <= 1:
+        return 0
+        
+    # 2. Calculate the squared differences
+    # (x - mean)^2 for every number in the list
+    squared_diffs = []
+    for x in in_series:
+        diff = x - avg
+        squared_diffs.append(diff ** 2)
+        
+    # 3. Sum them up and divide by (n - 1) for sample variance
+    total_squared_diff = sum(squared_diffs)
+    result = total_squared_diff / (count - 1)
+    
+    return result
     pass
 
 def standard_deviation(in_series):
