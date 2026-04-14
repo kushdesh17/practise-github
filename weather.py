@@ -2,6 +2,17 @@
 series_titles = ["Maximum temperature (Degree C)", "Minimum temperature (Degree C)", "Rainfall amount (millimetres)"]
 
 def mean(in_series):
+    # Calculate the sum of all numbers in the list
+  total = sum(in_series)
+  # Get the count of numbers in the list
+  count = len(in_series)
+  
+  # Calculate the average
+  if count > 0:
+      result = total / count
+      return result
+  else:
+      return 0
     pass
 
 def variance(in_series):
